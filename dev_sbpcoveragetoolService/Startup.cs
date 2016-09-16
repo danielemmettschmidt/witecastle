@@ -1,3 +1,4 @@
+using dev_sbpcoveragetoolService.Models;
 using Microsoft.Owin;
 using Owin;
 

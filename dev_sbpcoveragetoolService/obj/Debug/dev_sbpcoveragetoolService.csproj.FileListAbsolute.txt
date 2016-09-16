@@ -259,6 +259,6 @@ C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_
 C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\bin\ru\System.Spatial.resources.dll
 C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.csprojResolveAssemblyReference.cache
 C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.dll
 C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.pdb
+C:\Users\Ebsan\Documents\Visual Studio 2015\Projects\CoverageTool.MobileApp\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.csprojResolveAssemblyReference.cache
