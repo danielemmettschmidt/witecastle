@@ -30,6 +30,8 @@ namespace dev_sbpcoveragetoolService.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+        public System.Data.Entity.DbSet<dev_sbpcoveragetoolService.DataObjects.Project> Projects { get; set; }
     }
 
 }

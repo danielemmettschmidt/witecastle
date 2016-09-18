@@ -9,6 +9,7 @@ using Microsoft.Azure.Mobile.Server.Config;
 using dev_sbpcoveragetoolService.DataObjects;
 using dev_sbpcoveragetoolService.Models;
 using Owin;
+using SqlServerTypes;
 
 namespace dev_sbpcoveragetoolService
 {
@@ -16,6 +17,8 @@ namespace dev_sbpcoveragetoolService
     {
         public static void ConfigureMobileApp(IAppBuilder app)
         {
+            Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+
             HttpConfiguration config = new HttpConfiguration();
 
             //For more information on Web API tracing, see http://go.microsoft.com/fwlink/?LinkId=620686 
