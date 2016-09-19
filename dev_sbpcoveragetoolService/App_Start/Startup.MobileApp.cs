@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Web.Http;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Authentication;
@@ -29,7 +30,7 @@ namespace dev_sbpcoveragetoolService
                 .ApplyTo(config);
 
             // Use Entity Framework Code First to create database tables based on your DbContext
-            Database.SetInitializer(new dev_sbpcoveragetoolInitializer());
+            //Database.SetInitializer(new dev_sbpcoveragetoolInitializer());
 
             // To prevent Entity Framework from modifying your database schema, use a null database initializer
             // Database.SetInitializer<dev_sbpcoveragetoolContext>(null);
@@ -48,27 +49,32 @@ namespace dev_sbpcoveragetoolService
                     TokenHandler = config.GetAppServiceTokenHandler()
                 });
             }
+
+            // Automatic Code First Migrations
+            var migrator = new DbMigrator(new Migrations.Configuration());
+            migrator.Update();
+
             app.UseWebApi(config);
         }
     }
 
-    public class dev_sbpcoveragetoolInitializer : CreateDatabaseIfNotExists<dev_sbpcoveragetoolContext>
-    {
-        protected override void Seed(dev_sbpcoveragetoolContext context)
-        {
-            List<TodoItem> todoItems = new List<TodoItem>
-            {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
-            };
+    //public class dev_sbpcoveragetoolInitializer : CreateDatabaseIfNotExists<dev_sbpcoveragetoolContext>
+    //{
+    //    protected override void Seed(dev_sbpcoveragetoolContext context)
+    //    {
+    //        List<TodoItem> todoItems = new List<TodoItem>
+    //        {
+    //            new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
+    //            new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+    //        };
 
-            foreach (TodoItem todoItem in todoItems)
-            {
-                context.Set<TodoItem>().Add(todoItem);
-            }
+    //        foreach (TodoItem todoItem in todoItems)
+    //        {
+    //            context.Set<TodoItem>().Add(todoItem);
+    //        }
 
-            base.Seed(context);
-        }
-    }
+    //        base.Seed(context);
+    //    }
+    //}
 }
 

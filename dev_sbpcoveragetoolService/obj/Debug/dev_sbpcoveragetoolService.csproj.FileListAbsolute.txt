@@ -282,6 +282,7 @@ C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Mi
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.Owin.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.Owin.Security.dll
+C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.SqlServer.Types.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Newtonsoft.Json.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Owin.dll
@@ -393,8 +394,7 @@ C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\zh
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.dll
 C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.pdb
-C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\SqlServerTypes\x64\msvcr100.dll
-C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\SqlServerTypes\x64\SqlServerSpatial110.dll
-C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\SqlServerTypes\x86\msvcr100.dll
-C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\SqlServerTypes\x86\SqlServerSpatial110.dll
-C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\bin\Microsoft.SqlServer.Types.dll
+C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.csprojResolveAssemblyReference.cache
+C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.Migrations.InitialCreate.resources
+C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.csproj.GenerateResource.Cache
+C:\Users\ebsan\Source\Repos\SCT Mobile Service\dev_sbpcoveragetoolService\obj\Debug\dev_sbpcoveragetoolService.Migrations.AddCreatedAtGenerators.resources
