@@ -60,6 +60,10 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.Mobile.Server.Login, Version=0.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Server.Login.0.3.157.1\lib\net45\Microsoft.Azure.Mobile.Server.Login.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -95,6 +99,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web.Http">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
@@ -160,9 +165,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
+    <Compile Include="Authorization\LoginRequest.cs" />
+    <Compile Include="Authorization\LoginResult.cs" />
+    <Compile Include="Authorization\LoginResultUser.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\BerFileUploadController.cs" />
     <Compile Include="Controllers\BerSetController.cs" />
+    <Compile Include="Controllers\CustomLoginController.cs" />
     <Compile Include="Controllers\DiscrepancyTypeController.cs" />
     <Compile Include="Controllers\MethodologyController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -172,6 +182,7 @@
     <Compile Include="Controllers\TestSetController.cs" />
     <Compile Include="Controllers\TileController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataObjects\Account.cs" />
     <Compile Include="DataObjects\Area.cs" />
     <Compile Include="DataObjects\BerSet.cs" />
     <Compile Include="DataObjects\DiscrepancyType.cs" />
@@ -190,11 +201,16 @@
     <Compile Include="Migrations\201609182128321_AddCreatedAtGenerators.Designer.cs">
       <DependentUpon>201609182128321_AddCreatedAtGenerators.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609210134580_AddAccountsTable.cs" />
+    <Compile Include="Migrations\201609210134580_AddAccountsTable.Designer.cs">
+      <DependentUpon>201609210134580_AddAccountsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dev_sbpcoveragetoolContext.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CustomLoginProviderUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
@@ -219,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609182128321_AddCreatedAtGenerators.resx">
       <DependentUpon>201609182128321_AddCreatedAtGenerators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609210134580_AddAccountsTable.resx">
+      <DependentUpon>201609210134580_AddAccountsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

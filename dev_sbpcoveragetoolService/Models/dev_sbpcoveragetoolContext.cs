@@ -108,6 +108,10 @@ namespace dev_sbpcoveragetoolService.Models
                 .Property(m => m.CreatedAt)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
+            modelBuilder.Entity<Account>()
+                .Property(m => m.CreatedAt)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
@@ -132,6 +136,8 @@ namespace dev_sbpcoveragetoolService.Models
         public DbSet<BerSet> BerSets { get; set; }
 
         public DbSet<DiscrepancyType> DiscrepancyTypes { get; set; }
+
+        public System.Data.Entity.DbSet<Account> Accounts { get; set; }
     }
 
 }
