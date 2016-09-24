@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Web.Http;
+using System.Web.Routing;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Authentication;
 using Microsoft.Azure.Mobile.Server.Config;
@@ -52,6 +53,8 @@ namespace dev_sbpcoveragetoolService
             // Automatic Code First Migrations
             var migrator = new DbMigrator(new Migrations.Configuration());
             migrator.Update();
+
+            app.MapSignalR();
 
             app.UseWebApi(config);
         }
