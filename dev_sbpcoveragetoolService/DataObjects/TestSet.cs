@@ -27,6 +27,10 @@ namespace dev_sbpcoveragetoolService.DataObjects
         // TestSetId for the opposing team's TestSet that has a discrepancy. This is voluntarily set
         public string DiscrepancyTestSetId { get; set; }
         public string Comments { get; set; }
+        public decimal? BER { get; set; }
+        public decimal? SSI { get; set; }
+        public decimal? BERLat { get; set; }
+        public decimal? BERLong { get; set; }
         public bool Outcome { get; set; }
 
         [Required]

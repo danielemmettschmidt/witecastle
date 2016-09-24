@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201609210134580_AddAccountsTable.Designer.cs">
       <DependentUpon>201609210134580_AddAccountsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609242244451_AddBoundingBoxToAreaAndUpdateTestSets.cs" />
+    <Compile Include="Migrations\201609242244451_AddBoundingBoxToAreaAndUpdateTestSets.Designer.cs">
+      <DependentUpon>201609242244451_AddBoundingBoxToAreaAndUpdateTestSets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dev_sbpcoveragetoolContext.cs" />
     <Compile Include="SignalR\SctHub.cs" />
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609210134580_AddAccountsTable.resx">
       <DependentUpon>201609210134580_AddAccountsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609242244451_AddBoundingBoxToAreaAndUpdateTestSets.resx">
+      <DependentUpon>201609242244451_AddBoundingBoxToAreaAndUpdateTestSets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

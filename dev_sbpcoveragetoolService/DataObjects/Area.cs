@@ -19,6 +19,8 @@ namespace dev_sbpcoveragetoolService.DataObjects
         public string Name { get; set; }
 
         public string ShapeFile { get; set; }
+        // A json serialized string of type Microsoft.Maps.SpatialToolbox.BoundingBox
+        public string BoundingBox { get; set; }
 
         [Required]
         public string ProjectId { get; set; }
