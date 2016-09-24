@@ -60,7 +60,11 @@ namespace dev_sbpcoveragetoolService.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Sub, loginRequest.Username)
+                new Claim(JwtRegisteredClaimNames.Sub, loginRequest.Username),
+                new Claim(JwtRegisteredClaimNames.Exp, TimeSpan.FromDays(30).ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, account.Email),
+                new Claim(JwtRegisteredClaimNames.GivenName, account.FirstName),
+                new Claim(JwtRegisteredClaimNames.FamilyName, account.LastName)
             };
 
             var token = AppServiceLoginHandler.CreateToken(
