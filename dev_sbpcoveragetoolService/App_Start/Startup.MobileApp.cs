@@ -10,7 +10,11 @@ using Microsoft.Azure.Mobile.Server.Authentication;
 using Microsoft.Azure.Mobile.Server.Config;
 using dev_sbpcoveragetoolService.DataObjects;
 using dev_sbpcoveragetoolService.Models;
+using dev_sbpcoveragetoolService.SignalR;
+using Microsoft.AspNet.SignalR;
 using Owin;
+using SimpleInjector;
+using SimpleInjector.Integration.WebApi;
 
 namespace dev_sbpcoveragetoolService
 {
@@ -20,7 +24,7 @@ namespace dev_sbpcoveragetoolService
         {
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
 
-            HttpConfiguration config = new HttpConfiguration();
+            var config = new HttpConfiguration();
 
             //For more information on Web API tracing, see http://go.microsoft.com/fwlink/?LinkId=620686 
             config.EnableSystemDiagnosticsTracing();
@@ -55,6 +59,14 @@ namespace dev_sbpcoveragetoolService
             migrator.Update();
 
             app.MapSignalR();
+
+            // Simple Injector
+            var container = new Container();
+            container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
+
+            container.RegisterSingleton<ISignalRClientService>(() => new SignalRClientService(GlobalHost.ConnectionManager.GetHubContext<SctHub>().Clients));
+            container.Verify();
+            config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
 
             app.UseWebApi(config);
         }
