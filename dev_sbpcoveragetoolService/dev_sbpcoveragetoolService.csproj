@@ -184,6 +184,7 @@
     <Compile Include="Authorization\LoginResultUser.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\BatchTilesController.cs" />
     <Compile Include="Controllers\BerFileUploadController.cs" />
     <Compile Include="Controllers\BerSetController.cs" />
     <Compile Include="Controllers\CustomLoginController.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="DataObjects\TestPointAttempt.cs" />
     <Compile Include="DataObjects\TestSet.cs" />
     <Compile Include="DataObjects\Tile.cs" />
+    <Compile Include="DataTransferObjects\TileDto.cs" />
     <Compile Include="Migrations\201609182124013_InitialCreate.cs" />
     <Compile Include="Migrations\201609182124013_InitialCreate.Designer.cs">
       <DependentUpon>201609182124013_InitialCreate.cs</DependentUpon>

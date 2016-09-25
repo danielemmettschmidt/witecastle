@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Microsoft.Azure.Mobile.Server;
+using Newtonsoft.Json;
 
 namespace dev_sbpcoveragetoolService.DataObjects
 {
@@ -21,6 +22,8 @@ namespace dev_sbpcoveragetoolService.DataObjects
 
         [Required]
         public string AreaId { get; set; }
+        [JsonIgnore]
+        public virtual Area Area { get; set; }
 
         // Used for local db syncs only
         [Required]
