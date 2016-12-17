@@ -12,12 +12,8 @@ namespace dev_sbpcoveragetoolService.SignalR
     public class SctHub : Hub
     {
 
-        public String SendToArea(string areaId, SubArea subArea, int fieldTeamNumber)
+        public string SendToArea(string areaId, SubArea subArea, int fieldTeamNumber)
         {
-            //var context = GlobalHost.ConnectionManager.GetHubContext<SctHub>();
-
-            //// Call the app clients with the combined team id
-            //context.Clients.All.DiscrepancyFound();
             Clients.Group(areaId).DiscrepancyFound(areaId, subArea, fieldTeamNumber);
             return "Hello from the SignalR hub!";
         }

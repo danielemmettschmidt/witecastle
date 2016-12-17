@@ -18,7 +18,7 @@ namespace dev_sbpcoveragetoolService.Controllers
     public class TestSetController : TableController<TestSet>
     {
         private dev_sbpcoveragetoolContext _context;
-        private ISignalRClientService _clientService;
+        private readonly ISignalRClientService _clientService;
 
         public TestSetController(ISignalRClientService clientService)
         {
@@ -99,6 +99,12 @@ namespace dev_sbpcoveragetoolService.Controllers
             }
             else
             {
+                if (foundTestSet.TestPointAttempts == null)
+                {
+                    foundTestSet.TestPointAttempts =
+                        await _context.TestPointAttempts.Where(tpa => tpa.TestSetId == foundTestSet.Id).ToListAsync();
+                }
+
                 var matchingTestSets = CompareTestPointAttempts(sourceTestSet.TestPointAttempts,
                     foundTestSet.TestPointAttempts);
 
@@ -133,6 +139,8 @@ namespace dev_sbpcoveragetoolService.Controllers
                 _clientService.NotifyTeamsOfDiscrepancy(area.Id, subArea.Id, sourceTestSet.FieldTeamNumber);
             } 
 
+            // Make sure to delete TPAs before insert because client will push them up again
+            if (sourceTestSet.TestPointAttempts != null) sourceTestSet.TestPointAttempts = null;
             return sourceTestSet;
         }
 
