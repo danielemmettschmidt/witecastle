@@ -19,7 +19,7 @@ namespace dev_sbpcoveragetoolService.SignalR
 
         public void Print()
         {
-            Debug.Write("Print command called.");
+            Debug.Write("Print command called and executed.");
         }
 
         public void NotifyTeamsOfDiscrepancy(string areaId, string subareaId, int fieldTeamNumber)
