@@ -155,7 +155,7 @@ namespace dev_sbpcoveragetoolService.Controllers
 
             var statusCode = response.StatusCode;
 
-            if (statusCode != HttpStatusCode.NoContent || statusCode != HttpStatusCode.OK)
+            if (statusCode != HttpStatusCode.NoContent)
             {
                 System.Diagnostics.Trace.TraceError($"[SendTestSet] Issue notifying viewer of new testSet ({testSetId}) for project {projectId}");
             }
